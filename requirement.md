@@ -22,6 +22,19 @@
       - sudo apt install kind -y
   - Check status kind
       - sudo kind --version
+  # Create Kind Cluster before start 
+  -ubuntu@ip-172-31-25-177:/mnt/k8s-practice$ cat kind-config.yml
+<<<
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+    - role: control-plane
+      image: kindest/node:v1.35.0
+    - role: worker
+      image: kindest/node:v1.35.0
+    - role: worker
+      image: kindest/node:v1.35.0
+>>>
 
 ## Installation of Kubectl
 ✅ Step 2: Download kubectl v1.35
